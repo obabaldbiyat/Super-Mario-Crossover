@@ -3,22 +3,20 @@ node{
     stage('Clone') {
         checkout scm
     }
-        stage('Build image') {
+    stage('Build image') {
             steps{
                 app = docker.build("obab/SuperMario")
-                }
-            }
-        }
-        stage('Push image to Hub'){
-            steps{
-                script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u obab -p ${dockerhubpwd}'
+    }
+    stage('Push image to Hub'){
+        steps{
+            script{
+                withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                sh 'docker login -u obab -p ${dockerhubpwd}'
 
 }
-                   sh 'sudo docker push obab/SuperMario'
+                sh 'sudo docker push obab/SuperMario'
                 }
             }
         }
     }
-
+}

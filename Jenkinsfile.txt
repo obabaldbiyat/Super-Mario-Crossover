@@ -1,10 +1,10 @@
 pipeline {
-    agent any
-    
-        stage('clone') {
-            node {
+    agent { label 'my-agent' }
+    stages {
+        stage('Build') {
+            steps {
                 checkout scm
-            }
+                sh make
         stage('Build docker image'){
             steps{
                 script{

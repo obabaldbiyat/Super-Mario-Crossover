@@ -3,12 +3,8 @@ node{
     stage('Clone') {
         checkout scm
     }
-    stage('Build image') {
-        steps{
-            script{
-                sh 'sudo docker build -t obab/SuperMario .'
-            }
-        }
+     stage ('Build Image') {
+       app = docker.build("obab/SuperMario")
     }
     stage('Push image to Hub'){
         steps{

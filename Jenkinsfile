@@ -5,8 +5,7 @@ node{
     }
         stage('Build image') {
             steps{
-                script{
-                    sh 'sudo docker build -t obab/SuperMario .'
+                app = docker.build("obab/SuperMario")
                 }
             }
         }

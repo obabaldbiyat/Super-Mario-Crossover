@@ -1,13 +1,11 @@
 pipeline {
     agent any
     tools{
-        maven 'Maven_3_6_3'
     }
     stages{
-        stage('Build Maven'){
+        stage('Build Mario'){
             steps{
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/obabaldbiyat/Super-Mario-Crossover']])
-                sh 'mvn clean install'
+                git clone https://github.com/obabaldbiyat/Super-Mario-Crossover.git
             }
         }
         stage('Build docker image'){

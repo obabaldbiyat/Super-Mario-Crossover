@@ -24,7 +24,7 @@ pipeline {
                    sh 'docker login -u obab -p ${dockerhubpwd}'
 
 }
-                   sh 'sudo docker push obab/devops-integration'
+                   sh 'sudo docker push obab/SuperMario'
                 }
             }
         }

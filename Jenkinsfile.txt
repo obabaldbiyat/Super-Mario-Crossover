@@ -1,13 +1,10 @@
 pipeline {
     agent any
-    tools{
-    }
-    stages{
-        stage('Build Mario'){
-            steps{
-                git clone https://github.com/obabaldbiyat/Super-Mario-Crossover
+    
+        stage('clone') {
+            node {
+                checkout scm
             }
-        }
         stage('Build docker image'){
             steps{
                 script{

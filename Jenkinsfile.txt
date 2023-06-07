@@ -1,15 +1,8 @@
-pipeline {
-    agent any
-    
-  
+node{
 
-    stages {
-        stage('Checkout') {
-            steps {
-             
-                git 'https://github.com/obabaldbiyat/Super-Mario-Crossover'
-            }
-        }
+    stage('Clone') {
+        checkout scm
+    }
         stage('Build docker image'){
             steps{
                 script{

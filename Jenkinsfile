@@ -5,7 +5,7 @@ node{
     }
     stage('Build image') {
             steps{
-                app = docker.build("obab/SuperMario")
+                app = docker.build("obabaldbiyat/Super-Mario-Crossover")
     }
     stage('Push image to Hub'){
         steps{

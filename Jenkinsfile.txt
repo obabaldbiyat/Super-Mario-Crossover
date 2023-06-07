@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
              
-                git 'https://github.com/obabaldbiyat/Super-Mario-Crossover.git'
+                git 'https://github.com/obabaldbiyat/Super-Mario-Crossover'
             }
         }
         stage('Build docker image'){

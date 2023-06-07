@@ -5,7 +5,7 @@ pipeline {
     stages{
         stage('Build Mario'){
             steps{
-                git clone https://github.com/obabaldbiyat/Super-Mario-Crossover.git
+                git clone https://github.com/obabaldbiyat/Super-Mario-Crossover
             }
         }
         stage('Build docker image'){

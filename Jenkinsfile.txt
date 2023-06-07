@@ -1,10 +1,15 @@
 pipeline {
-    agent { label 'my-agent' }
+    agent any
+    
+  
+
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                checkout scm
-                sh make
+             
+                git 'https://github.com/obabaldbiyat/Super-Mario-Crossover.git'
+            }
+        }
         stage('Build docker image'){
             steps{
                 script{

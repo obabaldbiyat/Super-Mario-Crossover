@@ -4,9 +4,7 @@ node{
         checkout scm
     }
     stage ('Build Image') {
-        steps{
-            script{
-                sh 'sudo docker build -t obab/SuperMario .'
+        docker.build("obab/SuperMario")
     }
     stage('Push image to Hub'){
         steps{

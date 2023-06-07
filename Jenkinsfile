@@ -3,7 +3,7 @@ node{
     stage('Clone') {
         checkout scm
     }
-        stage('Build docker image'){
+        stage('Build image') {
             steps{
                 script{
                     sh 'sudo docker build -t obab/SuperMario .'
@@ -22,5 +22,4 @@ node{
             }
         }
     }
-}
 

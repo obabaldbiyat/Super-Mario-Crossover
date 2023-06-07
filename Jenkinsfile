@@ -6,7 +6,7 @@ node{
     stage ('Build Image') {
         steps{
             script{
-                sh 'sudo docker build -t obab/SuperMario .
+                sh 'sudo docker build -t obab/SuperMario .'
     }
     stage('Push image to Hub'){
         steps{

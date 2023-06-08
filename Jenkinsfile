@@ -15,12 +15,12 @@ node{
     }
      stage('Login') {
         script{
-            sh 'docker login -u obab -p dckr_pat_9jVuDM0t2Zv5Ilw5AdUGSsOJnSo'
+                    sh 'sudo docker login -u obab -p dckr_pat_9jVuDM0t2Zv5Ilw5AdUGSsOJnSo'
                 }
     }      
      stage('Push to Docker Hub') {    
         script {
-                     sh 'docker push obab/supermario'
+                    sh 'sudo docker push obab/supermario'
                 }
     }
     

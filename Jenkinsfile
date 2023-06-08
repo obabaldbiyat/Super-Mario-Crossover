@@ -10,8 +10,8 @@ node{
     }
         stage('Push image to Hub'){
                 script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u obab -p ${dockerhubpwd}'
+                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'mariopwd')]) {
+                   sh 'docker login -u obab -p ${mariopwd}'
 
     }
                    sh 'sudo docker push obab/SuperMario'

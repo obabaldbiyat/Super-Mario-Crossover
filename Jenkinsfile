@@ -5,13 +5,13 @@ node{
     }
     stage ('Build Image') {
        script{
-                    sh 'sudo docker build -t obab/super-mario .'
+                    sh 'sudo docker build -t supermario .'
                 }
     }
             stage ('Docker Tag') {
             steps {
                 script {
-                    sh 'docker tag obab/super-mario obab/super-mario'
+                    sh 'docker tag supermario obab/supermario'
                     
                 }
             }
@@ -28,7 +28,7 @@ node{
                 
                 script {
                      
-                        sh 'docker push obab/super-mario'
+                        sh 'docker push obab/supermario'
                     }
                 }
             }
@@ -42,6 +42,6 @@ node{
             remote.password = 'Azertyuiop1234'
             remote.allowAnyHosts = true
             stage('Remote SSH') {
-                sshCommand remote: remote, command: "docker run -d -p 9999:80 obab/super-mario"
+                sshCommand remote: remote, command: "docker run -d -p 9999:80 obab/supermario"
             }
           }

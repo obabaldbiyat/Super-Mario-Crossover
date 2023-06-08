@@ -35,3 +35,4 @@ node{
                 sshCommand remote: remote, command: "docker run -d -p 9999:80 obab/supermario"
             }
           }
+}

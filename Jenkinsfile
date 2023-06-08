@@ -33,7 +33,7 @@ node{
                 }
             }
         }
-    }
+    
           node {
             def remote = [:]
             remote.name = 'obabjenkins'

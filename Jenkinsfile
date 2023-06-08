@@ -13,9 +13,7 @@ node{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
                    sh 'docker login -u obab -p ${dockerhubpwd}'
 
-}
-                sh 'sudo docker push obab/SuperMario'
+    }
+                   sh 'sudo docker push obab/SuperMario'
                 }
-            }
-        }
     }

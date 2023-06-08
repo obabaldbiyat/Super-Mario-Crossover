@@ -11,7 +11,7 @@ node{
             stage ('Docker Tag') {
             steps {
                 script {
-                    sh 'docker tag calculator01 obab/super-mario'
+                    sh 'docker tag obab/super-mario obab/super-mario'
                     
                 }
             }

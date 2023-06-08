@@ -8,31 +8,21 @@ node{
                     sh 'sudo docker build -t supermario .'
                 }
     }
-            stage ('Docker Tag') {
-            steps {
-                script {
-                    sh 'docker tag supermario obab/supermario'
-                    
+     stage ('Docker Tag') {
+        script {
+                    sh 'docker tag supermario obab/supermario'             
                 }
-            }
-        }
-         stage('Login') {
-      steps {
+    }
+     stage('Login') {
         script{
             sh 'docker login -u obab -p dckr_pat_9jVuDM0t2Zv5Ilw5AdUGSsOJnSo'
-        }}
-      }
-        
-        stage('Push to Docker Hub') {
-            steps {
-                
-                script {
-                     
-                        sh 'docker push obab/supermario'
-                    }
                 }
-            }
-        }
+    }      
+     stage('Push to Docker Hub') {    
+        script {
+                     sh 'docker push obab/supermario'
+                }
+    }
     
           node {
             def remote = [:]

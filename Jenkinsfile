@@ -16,7 +16,5 @@ node{
     }
                    sh 'sudo docker push obab/SuperMario'
                 }
-            }
-        }
+
     }
-}

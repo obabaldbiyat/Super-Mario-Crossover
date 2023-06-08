@@ -4,7 +4,9 @@ node{
         checkout scm
     }
     stage ('Build Image') {
-        docker.build("obab/SuperMario")
+       script{
+                    sh 'sudo docker build -t obab/devops-integration .'
+                }
     }
     stage('Push image to Hub'){
         steps{
